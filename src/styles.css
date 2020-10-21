@@ -1,0 +1,73 @@
+.logo{
+    background-color: #7700FF;
+    padding: 0;
+}
+
+.nav-bar{
+    background: #d1c4e9;
+    box-shadow: 2px 2px 20px #000;
+}
+
+.sidebar{
+    display: flex;
+    min-height: 550px;
+    background: #1b5e20;
+    box-shadow: 5px 5px 10px  #000;
+}
+
+.side-item{
+    padding-top: 15px; 
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: red;
+}
+
+h3{
+    text-align: center;
+    margin-top: 7px;
+    color: grey;
+}
+
+h1{
+    text-align: center;
+    color: grey;
+}
+
+.introtext{
+    text-align: justify;
+}
+
+.apply-btn{
+    border: none;
+    margin-top: 20px;
+    width: 100%;
+    height: 150px;
+    background-color: darkcyan;
+    box-shadow: 0px 0px 5px 0px #000;
+}
+
+.contact-btn{
+    margin: 20px 0px;
+    width: 20%;
+}
+
+legend{
+    color:green;
+}
+
+@media(max-width: 1120px){
+    .sidebar{
+        display: none;
+    }
+
+    .router-content{
+        margin: 20px auto;
+    }
+
+}

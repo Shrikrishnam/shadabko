@@ -1,0 +1,145 @@
+<h3 class="mb-2">Fill the details below to place the appointment</h3>
+<hr/>
+<div class="container row mx-auto" style="width: 400px">
+	<form [formGroup]="fitnessForm" (submit)="onSubmit(userservice.appointmentData)">
+        <fieldset>
+            <legend>Personal Info</legend>
+		<div class="row">
+			<div class="col-6">
+				<!--  First Name -->
+				<div class="form-group">
+					<label for="firstname">First Name</label>
+					<input type="text" autofocus name = "firstname"
+                    class="form-control" formControlName="firstname" placeholder="First Name" [(ngModel)]="userservice.appointmentData.firstname"/>
+				</div>
+				</div>
+				<div class="col-6">
+					<!--  Last Name -->
+					<div class="form-group">
+						<label for="lastname">Last Name</label>
+						<input type="text" name = "lastname"
+                        class="form-control" formControlName="lastname" placeholder="Last Name" [(ngModel)]="userservice.appointmentData.lastname"/>
+				    </div>
+				</div>
+        </div>
+
+		<div class="row">
+			<!--  Age -->
+			<div class="form-group col-3">
+                <label for="age">Age</label>
+                <input type="number" name = "age" 
+                class="form-control" formControlName="age" placeholder="Age" [(ngModel)]="userservice.appointmentData.age"/>
+            </div>
+            <!--  Phone Number -->
+            <div class="form-group col-9">
+                <label for="phonenumber">Phone Number</label>
+                <input type="tel" formControlName = "phonenumber" 
+                class="form-control" name="phonenumber"placeholder="Phone Number" [(ngModel)]="userservice.appointmentData.phonenumber"/>
+            </div>
+        </div>
+
+        <div class="row">
+        <!--  Email -->
+            <div class="form-group col-12">
+                <label for="email">Email</label>
+                <input type="email"
+                 class="form-control" formControlName="email" name="email" placeholder="Email" [(ngModel)]="userservice.appointmentData.email"/>
+            </div>
+        </div>
+    </fieldset>
+        <fieldset>
+            <legend>Address</legend>
+        <div class="row">
+        <!-- Street Address -->
+            <div class="form-group col-12">
+                <label for="streetaddress">Street</label>
+                <input type="text" name="streetaddress"
+                class="form-control" formControlName="streetaddress" placeholder="Street Address" [(ngModel)]="userservice.appointmentData.streetaddress"/>
+            </div>
+        </div>
+
+        <div class="row">
+			<!--  City -->
+			<div class="form-group col-6">
+                <label for="city">City</label>
+                <input type="text" name="city" 
+                 class="form-control" formControlName="city" placeholder="City" [(ngModel)]="userservice.appointmentData.city"/>
+            </div>
+            <!-- State -->
+            <div class="form-group col-6">
+                <label for="state">State</label>
+                <input type="text" name="state"
+                 class="form-control" formControlName="state" placeholder="State" [(ngModel)]="userservice.appointmentData.state"/>
+            </div>
+        </div>            
+		
+        <div class="row">
+			<!--  Country -->
+			<div class="form-group col-6">
+                <label for="country">Country</label>
+                <input type="text" name="country"
+                class="form-control" formControlName="country" placeholder="Country" [(ngModel)]="userservice.appointmentData.country"/>
+            </div>
+            <!-- Pincode -->
+            <div class="form-group col-6">
+                <label for="pincode">Pincode</label>
+                <input type="number" name="pincode"
+                class="form-control" formControlName="pincode" placeholder="Pincode" [(ngModel)]="userservice.appointmentData.pincode"/>
+            </div>
+        </div>
+        </fieldset>
+        <fieldset>
+            <legend>Appoinment details</legend>
+        <div class="row">
+        <!--  TrainerPreference -->
+            <div class="form-group col-12">
+                <label for="trainerpreference">TrainerPreference</label>
+                <input type="text" name ="trainerpreference" 
+                class="form-control" formControlName="trainerpreference" placeholder="Male/Female" [(ngModel)]="userservice.appointmentData.trainerpreference"/>
+            </div>                                                          
+        </div>
+
+        <div class="row">
+        <!-- physiotherapist -->
+            <div class="form-group col-12">
+                <label for="physiotherapist">Physiotherapist</label>
+                <input type="text" name="physiotherapist" 
+                class="form-control" formControlName="physiotherapist" placeholder="Yes/No" [(ngModel)]="userservice.appointmentData.physiotherapist"/>
+            </div>
+        </div>
+
+         <div class="row">
+        <!--  Packages -->
+            <div class="form-group col-12">
+                <label for="packages">Packages</label>
+                <select requird class="custom-select" name = "packages" formControlName="packages" [(ngModel)]="userservice.appointmentData.packages">
+                    <option value = "">Select package</option>
+                    <option *ngFor = "let package of packages">{{package}}</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="row">
+			<!--  INR -->
+			<div class="form-group col-6">
+                <label for="inr">INR</label>
+                <input type="number" name="inr" 
+                class="form-control" formControlName="inr" placeholder="inr" [(ngModel)]="userservice.appointmentData.inr"/>
+            </div>
+            <!-- Paisa -->
+            <div class="form-group col-6">
+                <label for="paisa">Paisa</label>
+                <input type="number" name="paisa" 
+                class="form-control" formControlName="paisa" placeholder="paisa" [(ngModel)]="userservice.appointmentData.paisa"/>
+            </div>
+        </div>
+        </fieldset>
+		<div class="row my-4">
+			<div class="col-12">
+				<button [disabled] ="!fitnessForm.valid" class="btn btn-block btn-success" type="submit">Submit</button>
+			</div>
+		</div>
+	</form>
+
+</div>
